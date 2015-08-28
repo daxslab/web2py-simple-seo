@@ -89,8 +89,8 @@ def set_og_url_meta(url):
 
 def set_og_image(image):
     if isinstance(image, list):
-        for img in image:
-            current.response.meta.og_image = {"property": "og:image", "content": img}
+        for count in range(len(image)):
+            current.response.meta['og_image_'+str(count)] = {"property": "og:image", "content": image[count]}
     else:
         current.response.meta.og_image = {"property": "og:image", "content": image}
 
